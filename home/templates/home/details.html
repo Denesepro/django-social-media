@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3><a href="{% url 'account:user_profile' post.user.id %}">{{post.user}}</a></h3>
+<p>{{post.body}}</p>
+<small>{{post.updated|date:"Y_M"}}</small>
+<br/>
+{% if request.user.id == post.user.id %}
+
+<a href="{% url 'home:post_delete' post.id %}" class = "btn btn-danger">Delete</a>
+<a href="{% url 'home:post_update' post.id %}" class = "btn btn-info">Update</a>
+<br>
+<br>
+{% endif %}
+    <h3>Comments:</h3>
+    {% if request.user.is_authenticated %}
+    	<form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send">
+
+        </form>
+    {% else %}
+    	<p class="alert alert-danger">Only Logged users can submit Comment!</p>
+    {% endif %} 
+    {% for comment in comments %}
+    	<div class="card bg-dark text-white">
+            <p class="card-header"><a href="{% url 'account:user_profile' comment.user.id %}">{{ comment.user }}</a>   |   {{ comment.created|timesince }} ago</p>
+            <p class="card-body">{{ comment.body }}</p>
+        </div>
+        <br>
+    {% empty %}
+    <p>No Comments yet!</p>
+    {% endfor %}
+
+{% endblock content %}
+
+    
