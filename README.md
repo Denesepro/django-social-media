@@ -71,7 +71,7 @@ The application will be accessible in your web browser at http://127.0.0.1:8000/
 
 ```bash
 python manage.py createsuperuser
-
+```
 ```bash
 git clone [https://github.com/Denesepro/django-social-media.git](https://github.com/Denesepro/django-social-media.git)
 cd django-social-media
