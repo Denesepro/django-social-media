@@ -12,7 +12,7 @@ The primary objective of this project was to implement the **full backend logic*
 
 This application provides the fundamental features required for a community-driven platform:
 
-* **Complete Authentication:** Full system for user registration, login, and session management (implemented in the `account` app).
+* **Complete Authentication:** Full system for user registration, login, rest password with email and session management (implemented in the `account` app).
 * **Content Creation:** Users can create, publish, and manage **Posts or Questions**.
 * **Social Interaction:** Functionality to add **Comments** under posts, facilitating discussion and feedback.
 * **Modular Architecture:** Organized into separate Django apps (`account`, `home`) for clean code separation and scalability.
