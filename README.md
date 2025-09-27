@@ -46,7 +46,7 @@ It's highly recommended to set up and activate a Virtual Environment first. Then
 ```bash
 # Install dependencies
 pip install -r requirements.txt
-
+```
 ### 3. Database Setup
 
 Apply database migrations to initialize the schema (including user and post tables):
@@ -54,14 +54,14 @@ Apply database migrations to initialize the schema (including user and post tabl
 ```bash
 python manage.py makemigrations
 python manage.py migrate
-
+```
 ### 4. Run the Server
 
 Start the Django development server:
 
 ```bash
 python manage.py runserver
-
+```
 The application will be accessible in your web browser at http://127.0.0.1:8000/.
 
 ## 🔒 User & Admin Access
